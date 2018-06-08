@@ -1,0 +1,26 @@
+{
+  "name": "shop",
+  "version": "1.0.0",
+  "description": "### Installation Install the dependencies and devDependencies and start the gulp. ```sh $ git clone project_url $ cd project_name $ nmp i ```",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shvets",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-rename": "^1.2.3",
+    "gulp-tinypng": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shvets23/shop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shvets23/shop/issues"
+  },
+  "homepage": "https://github.com/Shvets23/shop#readme"
+}
