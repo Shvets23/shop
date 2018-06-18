@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/Shvets23/shop/issues"
   },
-  "homepage": "https://github.com/Shvets23/shop#readme"
+  "homepage": "https://github.com/Shvets23/shop#readme",
+  "dependencies": {}
 }
