@@ -1,4 +1,4 @@
-;(function($) {
+(function($) {
     // Init ion range slider
     $("#price-range").ionRangeSlider({
         type: "double",
@@ -11,7 +11,7 @@
         hide_min_max: true
     });
     // Init jquery form stayler
-    $('.select-stayler, .input-file-stayler, #uploud-main-file, #upload-screenshots').styler();
+    // $('.select-stayler, .input-file-stayler, #uploud-main-file, #upload-screenshots').styler();
     $('.trending-product-slider').slick({
         infinite: true,
         slidesToShow: 4,
@@ -21,4 +21,8 @@
         autoplaySpeed: 1800,
         autoplay:true
       });
+      //init slicknav
+    $('#menu').slicknav({
+        appendTo: '#header'
+        });
 })(jQuery);
