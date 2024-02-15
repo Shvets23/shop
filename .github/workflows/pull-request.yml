@@ -5,6 +5,7 @@ on:
   pull_request:
     branches: [master]
 
+
 jobs:
   send_notification:
     runs-on: ubuntu-latest
