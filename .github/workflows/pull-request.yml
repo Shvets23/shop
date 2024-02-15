@@ -1,5 +1,6 @@
 ame: 'Commit Message Check'
 
+
 on:
   pull_request:
     types:
