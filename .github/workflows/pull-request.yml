@@ -1,27 +1,7 @@
-ame: 'Commit Message Check'
-
-
-on:
-  pull_request:
-    types:
-      - opened
-      - edited
-      - reopened
-      - synchronize
-  push:
-    branches:
-      - master
-      - 'releases/*'
-
-jobs:
-  check-commit-message:
-    name: Check Commit Message
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get commit message
-        uses: dotCMS/commit-message-getter@v1
-        with:
-          excludeDescription: 'true' # optional: this excludes the description body of a pull request
-          excludeTitle: 'true' # optional: this excludes the title of a pull request
-          checkAllCommitMessages: 'true' # optional: this checks all commits associated with a pull request
-          accessToken: ${{ secrets.GITHUB_TOKEN }} # github access token is only required if checkAllCommitMessages is true
+- name: Checkout Commit
+  uses: actions/checkout@v3
+  with:
+    ref: ${{ env.GITHUB_SHA }}
+- name: Get Head Commit Message
+  id: get_head_commit_message
+  run: echo "HEAD_COMMIT_MESSAGE=$(git show -s --format=%s)" >> "$GITHUB_OUTPUT"
