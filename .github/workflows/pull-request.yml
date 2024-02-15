@@ -1,18 +1,23 @@
-name: Sleep for 5 seconds
+
+name: Notify on Pull Request
 
 on:
   pull_request:
+    branches: [master]
 
 jobs:
-  validate-pr:
+  send_notification:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Display info
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{github.event.after}}
+      - name: Get Commit Message
         run: |
-          pwd
-          tree -a -I '.git'
-          git status
-      - name: Sleep for 5 seconds
-        run: sleep 5
+          MSG=$(git log --format=%B -n 1 ${{github.event.after}})
+          echo "::set-env name=COMMIT_MESSAGE::${MSG}"
+      - name: Echo commit message
+        run: echo "Commit SHA: ${{github.event.after}}, commit message: ${{env.COMMIT_MESSAGE}} (or ${COMMIT_MESSAGE})"
